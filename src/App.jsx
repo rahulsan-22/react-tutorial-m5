@@ -81,10 +81,19 @@
 // export default App
 
 //!23/10/2026 (State)
-import Mutable from './State/Mutable'
+// import Mutable from './State/Mutable'
+
+// const App = () => {
+//   return <Mutable/>
+// }
+
+// export default App
+
+//!26/10/2026 (Lifecycle Methods)
+import Lifecycle from './LifecycleMethods/Lifecycle'
 
 const App = () => {
-  return <Mutable/>
+  return <Lifecycle/>
 }
 
 export default App
