@@ -90,10 +90,24 @@
 // export default App
 
 //!26/10/2026 (Lifecycle Methods)
+import React from 'react'
 import Lifecycle from './LifecycleMethods/Lifecycle'
+import Welcome from './LifecycleMethods/Welcome'
+import Fallback from './LifecycleMethods/Fallback'
 
 const App = () => {
-  return <Lifecycle/>
+  return <>
+    {/* <Lifecycle/> */}
+    <Fallback>
+      <Welcome name="Pavan" />
+    </Fallback>
+    <Fallback>
+      <Welcome name="Monty" />
+    </Fallback>
+    <Fallback>
+      <Welcome name="Ajit" />
+    </Fallback>
+  </>
 }
 
 export default App
