@@ -65,24 +65,64 @@
 // export default State
 
 //!Example 4: (Array State)
-import { useState } from 'react'
+// import { useState } from 'react'
+// const State = () => {
+//   let [snacks, setSnacks] = useState(["Samosa", "Punugulu", "Panipuri"])
+//   let handleSnacks = () => {
+//     setSnacks([...snacks,"EggPuff"])
+//   }
+//   return (
+//     <div>
+//       <h1>List of Snacks</h1>
+//       <ol>
+//         {
+//           snacks.map((item,index) => {
+//             return <li key={index}>{item}</li>
+//           })
+//         }
+//       </ol>
+//       <button onClick={handleSnacks}>Add EggPuff</button>
+//     </div>
+//   )
+// }
+// export default State
+
+//!Example 5: (Object State)
+// import  { useState } from 'react'
+
+// const State = () => {
+//   let [user, setUser] = useState({
+//     name: "Monty",
+//     age: 27
+//   })
+//   let handleUpdate = () => {
+//     setUser({ ...user, age: 30, place: "Hyd" })
+//   }
+//   return (
+//     <div>
+//       <h1>User : {user.name}</h1>
+//       <h1>Age : {user.age}</h1>
+//       {user.place && <h1>Place: {user.place}</h1>}
+//       <button onClick={handleUpdate}>Update Age and add Place</button>
+//     </div>
+//   )
+// }
+
+// export default State
+
+//!Functional Update (Whenever the current state depends on the previous state)
+import  { useState } from 'react'
 const State = () => {
-  let [snacks, setSnacks] = useState(["Samosa", "Punugulu", "Panipuri"])
-  let handleSnacks = () => {
-    setSnacks([...snacks,"EggPuff"])
+  let [count, setCount] = useState(0)
+  let handleCount = () => {
+    setCount((prevCount)=>prevCount+1)
   }
   return (
     <div>
-      <h1>List of Snacks</h1>
-      <ol>
-        {
-          snacks.map((item,index) => {
-            return <li key={index}>{item}</li>
-          })
-        }
-      </ol>
-      <button onClick={handleSnacks}>Add EggPuff</button>
+      <h1>{count}</h1>
+      <button onClick={handleCount}>Increment</button>
     </div>
   )
 }
 export default State
+
