@@ -122,10 +122,32 @@
 // export default App
 
 //!30/10/2026 (useEffect)
-import Effect from './useEffect/Effect'
+// import Effect from './useEffect/Effect'
 
+// const App = () => {
+//   return <Effect/>
+// }
+
+// export default App
+
+//!31/10/2026 (useContext)
+import Dilsukhnagar from './useContext/Dilsukhnagar'
+import { IcecreamContext, SnacksContext, SoftDrinksContext } from './useContext/Zepto'
+let snacksObj = {
+  item1: "Lays",
+  item2: "Jim-Jam",
+  item3: "Kit-Kat"
+}
 const App = () => {
-  return <Effect/>
+  return (
+    // <IcecreamContext value="Chocolate Cone">
+      <SoftDrinksContext value="Diet Coke">
+        <SnacksContext.Provider value={snacksObj}>
+            <Dilsukhnagar/>
+        </SnacksContext.Provider>
+      </SoftDrinksContext>
+    // </IcecreamContext>
+  )
 }
 
 export default App
