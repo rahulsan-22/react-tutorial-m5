@@ -131,23 +131,41 @@
 // export default App
 
 //!31/10/2026 (useContext)
-import Dilsukhnagar from './useContext/Dilsukhnagar'
-import { IcecreamContext, SnacksContext, SoftDrinksContext } from './useContext/Zepto'
-let snacksObj = {
-  item1: "Lays",
-  item2: "Jim-Jam",
-  item3: "Kit-Kat"
-}
+// import Dilsukhnagar from './useContext/Dilsukhnagar'
+// import { IcecreamContext, SnacksContext, SoftDrinksContext } from './useContext/Zepto'
+// let snacksObj = {
+//   item1: "Lays",
+//   item2: "Jim-Jam",
+//   item3: "Kit-Kat"
+// }
+// const App = () => {
+//   return (
+//     // <IcecreamContext value="Chocolate Cone">
+//       <SoftDrinksContext value="Diet Coke">
+//         <SnacksContext.Provider value={snacksObj}>
+//             <Dilsukhnagar/>
+//         </SnacksContext.Provider>
+//       </SoftDrinksContext>
+//     // </IcecreamContext>
+//   )
+// }
+
+// export default App
+
+//!02/11/2026 (useRef)
+// import Reference from './useRef/Reference'
+
+// const App = () => {
+//   return <Reference/>
+// }
+
+// export default App
+
+//!03/11/2026 (useMemo)
+import MemoComponent from './useMemo/MemoComponent'
+
 const App = () => {
-  return (
-    // <IcecreamContext value="Chocolate Cone">
-      <SoftDrinksContext value="Diet Coke">
-        <SnacksContext.Provider value={snacksObj}>
-            <Dilsukhnagar/>
-        </SnacksContext.Provider>
-      </SoftDrinksContext>
-    // </IcecreamContext>
-  )
+  return <MemoComponent/>
 }
 
 export default App
