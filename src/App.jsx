@@ -162,10 +162,40 @@
 // export default App
 
 //!03/11/2026 (useMemo)
-import MemoComponent from './useMemo/MemoComponent'
+// import MemoComponent from './useMemo/MemoComponent'
+
+// const App = () => {
+//   return <MemoComponent/>
+// }
+
+// export default App
+
+//!03/11/2026 (useCallback)
+import { useCallback, useState } from 'react'
+import Title from './useCallback/Title'
+import Count from './useCallback/Count'
+import Button from './useCallback/Button'
 
 const App = () => {
-  return <MemoComponent/>
+  let [age, setAge] = useState(23)
+  let [salary, setSalary] = useState(10000)
+
+  let handleAge = useCallback(() => {
+    setAge(age+1)
+  },[age])
+  let handleSalary = useCallback(() => {
+    setSalary(salary+5000)
+  }, [salary])
+  
+  return (
+    <>
+      <Title />
+      <Count text="Age" count={age} />
+      <Button fun={handleAge}>Increment Age</Button>
+      <Count text="Salary" count={salary} />
+      <Button fun={handleSalary}>Increment Salary</Button>
+    </>
+  )
 }
 
 export default App
