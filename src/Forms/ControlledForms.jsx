@@ -23,14 +23,19 @@ const ControlledForms = () => {
   let { name, email, password, age, phone, week, month, date, time, datetime, gender, skills, photo, color, brightness, country, feedback } = userData
 
   let handleChange = (e) => {
-    console.log(e)
-    let { name, value, type } = e.target
+    let { name, value, type, files,checked } = e.target
     if (type === "checkbox") {
-      
+      let copiedSkills = [...skills]
+      if (checked) {
+       copiedSkills.push(value)
+      } else {
+        copiedSkills = copiedSkills.filter(item=>item!=value)
+      }
+      setUserData({...userData,[name]:copiedSkills})
     } else if (type === "file") {
-      
+      setUserData({ ...userData, [name]: files[0] })
     } else {
-      setUserData({...userData,[name]:value})
+      setUserData({ ...userData, [name]: value })
     }
   }
 
@@ -90,7 +95,7 @@ const ControlledForms = () => {
       <br /><br />
 
       <label htmlFor="photo">Upload Id:</label>
-      <input type="file" id="photo" name="photo" value={photo} onChange={handleChange} />
+      <input type="file" id="photo" name="photo" onChange={handleChange} />
       <br /><br />
 
       <label htmlFor="color">Color:</label>
