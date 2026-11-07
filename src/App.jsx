@@ -171,31 +171,63 @@
 // export default App
 
 //!03/11/2026 (useCallback)
-import { useCallback, useState } from 'react'
-import Title from './useCallback/Title'
-import Count from './useCallback/Count'
-import Button from './useCallback/Button'
+// import { useCallback, useState } from 'react'
+// import Title from './useCallback/Title'
+// import Count from './useCallback/Count'
+// import Button from './useCallback/Button'
+
+// const App = () => {
+//   let [age, setAge] = useState(23)
+//   let [salary, setSalary] = useState(10000)
+
+//   let handleAge = useCallback(() => {
+//     setAge(age+1)
+//   },[age])
+//   let handleSalary = useCallback(() => {
+//     setSalary(salary+5000)
+//   }, [salary])
+  
+//   return (
+//     <>
+//       <Title />
+//       <Count text="Age" count={age} />
+//       <Button fun={handleAge}>Increment Age</Button>
+//       <Count text="Salary" count={salary} />
+//       <Button fun={handleSalary}>Increment Salary</Button>
+//     </>
+//   )
+// }
+
+// export default App
+
+//! 04/11/2026 (Stylings)
+// import Global from './Stylings/Global'
+// import Header from './Stylings/Header'
+// import Inline from './Stylings/Inline'
+// import Navbar from './Stylings/Navbar'
+// import Tailwind from './Stylings/Tailwind'
+// // import "./styles.css"
+
+// const App = () => {
+//   return <>
+//     {/* <Inline />
+//     <hr />
+//     <Global />
+//     <hr />*/}
+//     {/* <Navbar />
+//     <Header /> */}
+//     <Tailwind/>
+//   </>
+// }
+
+// export default App
+
+//!06/11/2026 (Controlled Forms)
+import React from 'react'
+import ControlledForms from './Forms/ControlledForms'
 
 const App = () => {
-  let [age, setAge] = useState(23)
-  let [salary, setSalary] = useState(10000)
-
-  let handleAge = useCallback(() => {
-    setAge(age+1)
-  },[age])
-  let handleSalary = useCallback(() => {
-    setSalary(salary+5000)
-  }, [salary])
-  
-  return (
-    <>
-      <Title />
-      <Count text="Age" count={age} />
-      <Button fun={handleAge}>Increment Age</Button>
-      <Count text="Salary" count={salary} />
-      <Button fun={handleSalary}>Increment Salary</Button>
-    </>
-  )
+  return <ControlledForms/>
 }
 
 export default App
