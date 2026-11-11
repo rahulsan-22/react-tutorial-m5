@@ -223,11 +223,28 @@
 // export default App
 
 //!06/11/2026 (Controlled Forms)
-import React from 'react'
-import ControlledForms from './Forms/ControlledForms'
+// import ControlledForms from './Forms/ControlledForms'
+
+// const App = () => {
+//   return <ControlledForms/>
+// }
+
+// export default App
+
+//!11/11/2026 (Uncontrolled Forms)
+// import UncontrolledForms from './Forms/UncontrolledForms'
+
+// const App = () => {
+//   return <UncontrolledForms/>
+// }
+
+// export default App
+
+//!12/11/2026 (React Hook Form)
+import ReactHookForm from './Forms/ReactHookForm'
 
 const App = () => {
-  return <ControlledForms/>
+  return <ReactHookForm/>
 }
 
 export default App
