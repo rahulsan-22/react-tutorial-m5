@@ -186,7 +186,7 @@
 //   let handleSalary = useCallback(() => {
 //     setSalary(salary+5000)
 //   }, [salary])
-  
+
 //   return (
 //     <>
 //       <Title />
@@ -250,10 +250,47 @@
 // export default App
 
 //!13/11/2026 (Axios)
-import FetchData from './Axios/FetchData'
+// import FetchData from './Axios/FetchData'
 
+// const App = () => {
+//   return <FetchData/>
+// }
+
+// export default App
+
+//!14/11/2026 (Router)
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./Router/Home"
+import About from "./Router/About"
+import Contact from "./Router/Contact"
+import NotFound from "./Router/NotFound"
+import Navbar from "./Router/Navbar"
+import "./Router.css"
+import Product from "./Router/Product"
+import Login from "./Router/Login"
+import Dashboard from "./Router/Dashboard"
+import ProtectedRoute from "./Router/ProtectedRoute"
 const App = () => {
-  return <FetchData/>
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/product/:id/:name/:price" element={<Product />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App
