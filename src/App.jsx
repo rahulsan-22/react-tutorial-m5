@@ -270,24 +270,30 @@ import Product from "./Router/Product"
 import Login from "./Router/Login"
 import Dashboard from "./Router/Dashboard"
 import ProtectedRoute from "./Router/ProtectedRoute"
+import { lazy, Suspense } from "react"
+let Accounts = lazy(() => import("./Router/Accounts"))
+let Settings = lazy(() => import("./Router/Settings"))
+let Orders = lazy(() => import("./Router/Orders"))
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/product/:id/:name/:price" element={<Product />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          } />
-        </Routes>
+        <Suspense fallback="Loading....">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/product/:id/:name/:price" element={<Product />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
+              <Route path="accounts" element={<Accounts />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="orders" element={<Orders />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </>
   )
