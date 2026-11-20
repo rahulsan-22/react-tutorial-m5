@@ -259,44 +259,92 @@
 // export default App
 
 //!14/11/2026 (Router)
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from "./Router/Home"
-import About from "./Router/About"
-import Contact from "./Router/Contact"
-import NotFound from "./Router/NotFound"
-import Navbar from "./Router/Navbar"
-import "./Router.css"
-import Product from "./Router/Product"
-import Login from "./Router/Login"
-import Dashboard from "./Router/Dashboard"
-import ProtectedRoute from "./Router/ProtectedRoute"
-import { lazy, Suspense } from "react"
-let Accounts = lazy(() => import("./Router/Accounts"))
-let Settings = lazy(() => import("./Router/Settings"))
-let Orders = lazy(() => import("./Router/Orders"))
+// import { BrowserRouter, Route, Routes } from "react-router-dom"
+// import Home from "./Router/Home"
+// import About from "./Router/About"
+// import Contact from "./Router/Contact"
+// import NotFound from "./Router/NotFound"
+// import Navbar from "./Router/Navbar"
+// import "./Router.css"
+// import Product from "./Router/Product"
+// import Login from "./Router/Login"
+// import Dashboard from "./Router/Dashboard"
+// import ProtectedRoute from "./Router/ProtectedRoute"
+// import { lazy, Suspense } from "react"
+// let Accounts = lazy(() => import("./Router/Accounts"))
+// let Settings = lazy(() => import("./Router/Settings"))
+// let Orders = lazy(() => import("./Router/Orders"))
+// const App = () => {
+//   return (
+//     <>
+//       <BrowserRouter>
+//         <Navbar />
+//         <Suspense fallback="Loading....">
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/about" element={<About />} />
+//             <Route path="/contact" element={<Contact />} />
+//             <Route path="/product/:id/:name/:price" element={<Product />} />
+//             <Route path="/login" element={<Login />} />
+//             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
+//               <Route path="accounts" element={<Accounts />} />
+//               <Route path="settings" element={<Settings />} />
+//               <Route path="orders" element={<Orders />} />
+//             </Route>
+//             <Route path="*" element={<NotFound />} />
+//           </Routes>
+//         </Suspense>
+//       </BrowserRouter>
+//     </>
+//   )
+// }
+
+// export default App
+
+//!20/11/2026 (Pure Components)
+// import Normal from './PureComponents/Normal'
+// import Pure from './PureComponents/Pure'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Normal />
+//       <Pure/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+//! Memo
+// import Regular from './Memo/Regular'
+// import Memo from './Memo/Memo'
+// import { useState } from 'react'
+
+// const App = () => {
+//   let [state, setState] = useState({
+//     name: "Monty"
+//   })
+//   return (
+//     <div>
+//       <Regular name={state.name} />
+//       <Memo name={state.name} />
+//       <button onClick={() =>setState({name:"Pavan"})}>Change Name</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+//!Portals
+import Title from './Portals/Title'
+import LoginForm from './Portals/LoginForm'
+
 const App = () => {
-  return (
-    <>
-      <BrowserRouter>
-        <Navbar />
-        <Suspense fallback="Loading....">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/product/:id/:name/:price" element={<Product />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
-              <Route path="accounts" element={<Accounts />} />
-              <Route path="settings" element={<Settings />} />
-              <Route path="orders" element={<Orders />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </>
-  )
+  return <>
+    <Title />
+    <LoginForm/>
+  </>
 }
 
 export default App
