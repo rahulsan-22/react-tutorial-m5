@@ -336,15 +336,34 @@
 
 // export default App
 
-//!Portals
-import Title from './Portals/Title'
-import LoginForm from './Portals/LoginForm'
+// !Portals
+// import Title from './Portals/Title'
+// import LoginForm from './Portals/LoginForm'
+
+// const App = () => {
+//   return <>
+//     <Title />
+//     <LoginForm/>
+//   </>
+// }
+
+// export default App
+
+//!21/11/2026 (Custom Hooks)
+// import CounterOne from './CustomHooks/CounterOne'
+// import CounterTwo from './CustomHooks/CounterTwo'
+import ProductsData from './CustomHooks/ProductsData'
+import RecipeData from './CustomHooks/RecipeData'
 
 const App = () => {
-  return <>
-    <Title />
-    <LoginForm/>
-  </>
+  return (
+    <div>
+      {/* <CounterOne/> */}
+      {/* <CounterTwo/> */}
+      <RecipeData />
+      <ProductsData/>
+    </div>
+  )
 }
 
 export default App
